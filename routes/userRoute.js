@@ -2,7 +2,7 @@ const router = require("express").Router();
 const usersController = require("../controllers/userControllers");
 const verifyJWT = require("../middlewares/verifyJWT");
 
-router.use(verifyJWT);
+// router.use(verifyJWT);
 
 router
   .route("/")
