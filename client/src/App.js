@@ -1,19 +1,19 @@
-// import { createBrowserRouter } from "react-router-dom";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <h1>hello world</h1>,
-//   },
-// ]);
-
-// export default router;
 import { Routes, Route } from "react-router-dom";
-// import DashLayout from "./components/dashLayout";
+import DashLayout from "./components/dashLayout";
 import Layout from "./components/layout";
 import Public from "./components/public";
 import Login from "./features/auth/login";
-// import Welcome from "./features/auth/welcome";
+import PersistLogin from "./features/auth/persistLogin";
+import Welcome from "./features/auth/welcome";
+import RequireAuth from "./features/auth/requireAuth";
+import Prefetch from "./features/auth/prefetch";
+import UsersList from "./features/user/userList";
+import EditUser from "./features/user/editUser";
+import NewUserForm from "./features/user/newUserForm";
+import NotesList from "./features/notes/noteList";
+import EditNote from "./features/notes/editNote";
+import NewNote from "./features/notes/newNote";
+import { ROLES } from "./config/roles";
 
 export default function App() {
   return (
@@ -24,7 +24,7 @@ export default function App() {
         <Route path="login" element={<Login />} />
 
         {/* Protected Routes */}
-        {/* <Route element={<PersistLogin />}>
+        <Route element={<PersistLogin />}>
           <Route
             element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}
           >
@@ -52,7 +52,7 @@ export default function App() {
               </Route>
             </Route>
           </Route>
-        </Route> */}
+        </Route>
         {/* End Protected Routes */}
       </Route>
     </Routes>
